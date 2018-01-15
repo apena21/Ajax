@@ -1,3 +1,8 @@
+// To do: ask tutor about styling gifs so that more than one appears in the same row instead of appearing vertically. 
+// ask how to limit request and response to only "still" and "animated gifs"
+// ask how to implement the switch between and a still and an animated gif with a button click.  
+// 
+
 //create array of strings:
 
 var sportsTypes = [    
@@ -74,7 +79,7 @@ event.preventDefault();
     
     //added to distinguish between still and animated images
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-    var state = sportsImage.attr("data-animate" || "data-still");
+    var state = sportsImage.attr("preview_gif" || "original_still");
     
     // Creating and storing an image tag
     var sportsImage = $("<img>");
@@ -88,11 +93,11 @@ event.preventDefault();
 
     if (state === "data-animate") {
 
-    $(this).attr("src", sportsImage.attr("data-animate"));
+    $(this).attr("src", sportsImage.attr("preview_gif"));
 
     } else {
 
-    $(this).attr("src", sportsImage.attr("data-still"));
+    $(this).attr("src", sportsImage.attr("original_still"));
 
     }
 
@@ -181,6 +186,8 @@ event.preventDefault();
 
       // Prependng the sportsDiv to the HTML page in the "#gifs-appear-here" div
       $("#gifs-appear-here").prepend(sportsDiv);
+
+
 
     }
   });
